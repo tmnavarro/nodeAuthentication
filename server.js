@@ -29,7 +29,11 @@ app.use(passport.initialize())
 app.use(passport.session())
 app.use(flash())
 
+//Public route access
+app.use(express.static(__dirname + '/bower_components/bootstrap/dist'))
+
 //Impor Routes
+require('./config/passport')(passport)
 require('./app/routes.js')(app, passport)
 
 //Run server

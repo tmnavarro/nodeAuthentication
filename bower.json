@@ -1,0 +1,17 @@
+{
+  "name": "node-authentication",
+  "description": "Authentications with node and mongodb",
+  "main": "server.js",
+  "authors": [
+    "Túlio Navarro"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
