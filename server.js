@@ -24,6 +24,7 @@ app.use(bodyParser())
 app.set('view engine', 'ejs')
 
 //Init passport requires
+require('./config/passport')(passport)
 app.use(session({ secret: 'appauthenticationsecret'}))
 app.use(passport.initialize())
 app.use(passport.session())
@@ -33,7 +34,6 @@ app.use(flash())
 app.use(express.static(__dirname + '/bower_components/bootstrap/dist'))
 
 //Impor Routes
-require('./config/passport')(passport)
 require('./app/routes.js')(app, passport)
 
 //Run server

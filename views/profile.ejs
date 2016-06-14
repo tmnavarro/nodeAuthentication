@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Perfil Usuário</title>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <h1>Perfil usuario</h1>
+        <ul>
+          <li><strong>id:</strong> <%= user._id  %></li>
+          <li><strong>Email:</strong> <%= user.local.email  %></li>
+          <li><strong>Senha:</strong> <%= user.local.password  %></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

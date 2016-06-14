@@ -26,10 +26,16 @@ module.exports = (app, passport) => {
 
   app.post('/sigup', passport.authenticate('local-sigup', {
     successRedirect: '/profile',
-    failureRedirect: '/signup',
+    failureRedirect: '/sigup',
     failureFlash: true
   }))
-  
+
+  app.post('/login', passport.authenticate('local-login', {
+    successRedirect: '/profile',
+    failureRedirect: '/login',
+    failureFlash: true
+  }))
+
 }
 
 //middleware to verify login is true

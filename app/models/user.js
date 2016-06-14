@@ -21,7 +21,10 @@ const userShema = mongoose.Schema({
 userShema.methods.generateHash = (password) =>
   bcrypt.hashSync(password, bcrypt.genSaltSync(8), null)
 
-userShema.methods.validPassword = (password) =>
-  bcrypt.compareSync(password, userShema.local.password)
+// no use arrow function because need access "this"
+userShema.methods.validPassword = function(password){
+  return bcrypt.compareSync(password, this.local.password)
+}
+
 
 module.exports = mongoose.model('User', userShema)
